@@ -28,7 +28,6 @@ pkg.keywords:
 pkg.deps:
     - hw/hal
     - kernel/os
-    - boot/bootutil
     - encoding/tinycbor
     - encoding/cborattr
     - encoding/base64
@@ -37,3 +36,4 @@ pkg.deps:
 
 pkg.req_apis:
     - console
+    - bootloader

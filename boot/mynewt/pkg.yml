@@ -30,6 +30,12 @@ pkg.deps:
     - "@apache-mynewt-core/kernel/os"
     - "@apache-mynewt-core/sys/console/stub"
 
+pkg.deps.BOOTUTIL_SIGN_EC256:
+    - my_keys/ecc256_key
+
+pkg.deps.BOOTUTIL_SIGN_RSA:
+    - my_keys/rsa_key
+
 pkg.deps.BOOT_SERIAL.OVERWRITE:
     - "@apache-mynewt-core/sys/console/full"
     - "@mcuboot/boot/boot_serial"

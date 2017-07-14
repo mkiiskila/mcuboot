@@ -42,7 +42,7 @@
 #endif
 
 #if !defined(MCUBOOT_USE_MBED_TLS) && !defined(MCUBOOT_USE_TINYCRYPT)
-    #error "One of MBED_TLS or TINYCRYPT must be defined"
+#define MCUBOOT_USE_MBED_TLS
 #endif
 
 #ifdef MCUBOOT_USE_MBED_TLS

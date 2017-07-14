@@ -1042,12 +1042,12 @@ boot_copy_image(struct boot_status *bs)
 
     hdr = boot_img_hdr(&boot_data, 0);
     if (hdr->ih_magic == IMAGE_MAGIC) {
-        copy_size = hdr->ih_hdr_size + hdr->ih_img_size + hdr->ih_tlv_size;
+        copy_size = hdr->ih_hdr_size + hdr->ih_img_size /*+ hdr->ih_tlv_size*/;
     }
 
     hdr = boot_img_hdr(&boot_data, 1);
     if (hdr->ih_magic == IMAGE_MAGIC) {
-        size = hdr->ih_hdr_size + hdr->ih_img_size + hdr->ih_tlv_size;
+        size = hdr->ih_hdr_size + hdr->ih_img_size /*+ hdr->ih_tlv_size*/;
     }
 
     if (!size || !copy_size || size == copy_size) {
@@ -1057,9 +1057,9 @@ boot_copy_image(struct boot_status *bs)
         hdr = &tmp_hdr;
         if (hdr->ih_magic == IMAGE_MAGIC) {
             if (!size) {
-                size = hdr->ih_hdr_size + hdr->ih_img_size + hdr->ih_tlv_size;
+                size = hdr->ih_hdr_size + hdr->ih_img_size/*+ hdr->ih_tlv_size*/;
             } else {
-                copy_size = hdr->ih_hdr_size + hdr->ih_img_size + hdr->ih_tlv_size;
+                copy_size = hdr->ih_hdr_size + hdr->ih_img_size /*+ hdr->ih_tlv_size*/;
             }
         }
     }
